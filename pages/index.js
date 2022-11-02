@@ -2,20 +2,20 @@ import Head from 'next/head'
 import Header from '@components/Header'
 import Footer from '@components/Footer'
 import { setCookie, getCookie} from 'cookies-next';
-import { useRouter } from 'next/router'
 
 
 export const getServerSideProps = (context) => {
   const req = context.req
   const res = context.res
   const userCookie = getCookie('iodUsers', { req, res });
+  const host = context.req.headers.host
   const { query } = context
 
   if (!userCookie && !('_gl' in query)) {
     return {
       redirect: {
         permanent: false,
-        destination: 'https://redirection-testing-web.herokuapp.com/',
+        destination: 'https://redirection-testing-web.herokuapp.com/?referrer='+host,
       },
     };
   }
@@ -42,7 +42,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <Header title="Welcome to my app!" />
+        <Header title="Welcome to my web 1!" />
         <p className="description">
           Get started by editing <code>pages/index.js</code>
         </p>
