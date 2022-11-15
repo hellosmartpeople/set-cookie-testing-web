@@ -47,14 +47,6 @@ export default function Blog() {
         </script> 
       </Head>
 
-      <main>
-        <Header title="Welcome to my web 1!" />
-        <p className="description">
-          Redirection Page <code>pages/redirection.js</code>
-        </p>
-      </main>
-
-      <Footer />
     </div>
     )
 }
