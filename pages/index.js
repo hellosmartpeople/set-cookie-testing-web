@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Header from '@components/Header'
 import Footer from '@components/Footer'
+import Link from 'next/link';
 import { setCookie, getCookie} from 'cookies-next';
 const querystring = require('querystring');
 
@@ -61,6 +62,7 @@ export default function Home() {
         <Header title="Welcome to my web 1!" />
         <p className="description">
           Get started by editing <code>pages/index.js</code>
+          <a href="https://www.w3schools.com">Visit W3Schools</a>
         </p>
       </main>
 
